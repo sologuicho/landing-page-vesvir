@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; }
+  ::selection{ background:#bff0cd; }
+  @keyframes vesvir-rise { from{ opacity:0; transform:translateY(14px) } to{ opacity:1; transform:translateY(0) } }
+</style>
+</helmet>
+<div style="font-family:'Hanken Grotesk',sans-serif; color:#0b140f; background:#ffffff; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <nav style="position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:28px; padding:15px 28px; background:rgba(255,255,255,.86); backdrop-filter:blur(12px); border-bottom:1px solid #eef0ee;">
+    <div style="display:flex; align-items:center; gap:9px; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:23px; letter-spacing:-.02em;">
+      <span style="width:30px; height:30px; border-radius:9px; background:#0b140f; display:flex; align-items:center; justify-content:center; color:#25d366; font-size:18px;">◇</span>
+      Vesvir
+    </div>
+    <div style="display:flex; gap:24px; margin-left:14px; font-size:14.5px; font-weight:500; color:#404a44;">
+      <span style="cursor:pointer;">Producto</span>
+      <span style="cursor:pointer;">Cómo funciona</span>
+      <span style="cursor:pointer;">Industrias</span>
+      <span style="cursor:pointer;">Precio</span>
+    </div>
+    <div style="margin-left:auto; display:flex; align-items:center; gap:18px;">
+      <span style="font-size:14.5px; font-weight:600; cursor:pointer; color:#0b140f;">Iniciar sesión</span>
+      <a style="background:#0b140f; color:#fff; font-weight:600; font-size:14.5px; padding:10px 18px; border-radius:11px; text-decoration:none; cursor:pointer;">Prueba por $1</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position:relative; padding:64px 28px 40px; background:radial-gradient(900px 420px at 88% -8%, #e7faee 0%, rgba(231,250,238,0) 62%);">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.08fr .92fr; gap:54px; align-items:center;">
+      <div style="animation:vesvir-rise .6s ease both;">
+        <div style="display:inline-flex; align-items:center; gap:8px; background:#eafaef; color:#0c7a3c; border:1px solid #c5edd2; font-weight:600; font-size:13px; padding:7px 13px; border-radius:30px; margin-bottom:22px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:#25d366; display:inline-block;"></span>
+          Automatización de ventas con IA · Hecho para México
+        </div>
+        <h1 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(40px,5.2vw,68px); line-height:1.02; letter-spacing:-.03em; margin:0 0 20px;">
+          Tu vendedor que nunca<br>duerme, vive en
+          <span style="color:#1aa84e; position:relative; white-space:nowrap;">WhatsApp</span>.
+        </h1>
+        <p style="font-size:19px; line-height:1.5; color:#475149; margin:0 0 30px; max-width:520px;">
+          Vesvir responde en segundos, califica al cliente, agenda la cita y nunca olvida un seguimiento. <strong style="color:#0b140f;">El 78% compra al primero que contesta.</strong> Que ese seas tú.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:13px; margin-bottom:22px;">
+          <a style="background:#0b140f; color:#fff; font-weight:600; font-size:16px; padding:15px 26px; border-radius:13px; text-decoration:none; cursor:pointer;">Empieza gratis →</a>
+          <a style="background:#fff; color:#0b140f; font-weight:600; font-size:16px; padding:15px 26px; border-radius:13px; border:1.5px solid #d9ddda; text-decoration:none; cursor:pointer;">Agenda una demo</a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:18px; font-size:13.5px; color:#5b6760; font-weight:500;">
+          <span style="display:flex; align-items:center; gap:6px;"><span style="color:#1aa84e; font-weight:700;">✓</span> Listo en 1 día</span>
+          <span style="display:flex; align-items:center; gap:6px;"><span style="color:#1aa84e; font-weight:700;">✓</span> Sin equipo técnico</span>
+          <span style="display:flex; align-items:center; gap:6px;"><span style="color:#1aa84e; font-weight:700;">✓</span> Pruébalo por $1 MXN</span>
+        </div>
+      </div>
+
+      <div style="position:relative;">
+        <div style="position:absolute; -top:0; right:-10px; top:-26px; background:#0b140f; color:#fff; font-size:12.5px; font-weight:600; padding:7px 13px; border-radius:30px; z-index:3; box-shadow:0 10px 24px -10px rgba(0,0,0,.4);">⚡ Respondió en 8 segundos</div>
+        <div style="height:560px; max-width:390px; margin-left:auto;">
+          <dc-import name="ChatThread" messages="{{ heroChat }}" contact="Refaccionaria El Tornillo" accent="#d6f7c8" hint-size="100%,560px" style="width:100%;height:100%;"></dc-import>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section style="max-width:1180px; margin:18px auto 0; padding:0 28px;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid #e8ebe8; border-radius:20px; overflow:hidden;">
+      <div style="padding:30px 28px; border-right:1px solid #e8ebe8;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:46px; letter-spacing:-.03em; color:#0b140f;">98<span style="color:#1aa84e;">%</span></div>
+        <div style="font-size:15px; color:#5b6760; margin-top:4px;">tasa de apertura en WhatsApp <span style="color:#9aa39d;">vs 19% en email</span></div>
+      </div>
+      <div style="padding:30px 28px; border-right:1px solid #e8ebe8;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:46px; letter-spacing:-.03em; color:#0b140f;">3<span style="color:#1aa84e;">×</span></div>
+        <div style="font-size:15px; color:#5b6760; margin-top:4px;">más citas confirmadas con seguimiento automático</div>
+      </div>
+      <div style="padding:30px 28px;">
+        <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:46px; letter-spacing:-.03em; color:#0b140f;">&lt;30<span style="color:#1aa84e; font-size:30px;">s</span></div>
+        <div style="font-size:15px; color:#5b6760; margin-top:4px;">en responder, sin importar la hora ni el día</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section style="max-width:1180px; margin:80px auto 0; padding:0 28px;">
+    <div style="background:#0b140f; border-radius:26px; padding:54px 52px; color:#fff; position:relative; overflow:hidden;">
+      <div style="position:absolute; top:-60px; right:-40px; width:280px; height:280px; background:radial-gradient(circle, rgba(37,211,102,.22), transparent 70%);"></div>
+      <div style="position:relative; max-width:680px;">
+        <div style="font-size:14px; font-weight:600; color:#62e08c; letter-spacing:.04em; text-transform:uppercase; margin-bottom:16px;">El cliente no espera</div>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(30px,3.6vw,46px); line-height:1.08; letter-spacing:-.02em; margin:0 0 18px;">
+          Cada minuto sin responder es una venta que se va con tu competencia.
+        </h2>
+        <p style="font-size:18px; line-height:1.55; color:#b7c2bb; margin:0 0 34px;">
+          La mayoría de los negocios tarda horas en contestar un WhatsApp. Para entonces, el cliente ya le compró a otro. Vesvir contesta al instante, todos los días, a cualquier hora.
+        </p>
+      </div>
+      <div style="position:relative; display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:620px;">
+        <div style="background:#161f1a; border:1px solid #283129; border-radius:16px; padding:22px 24px;">
+          <div style="font-size:13.5px; color:#8b968f; margin-bottom:8px;">Tu competencia responde en</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:38px; color:#ff7a6b;">2 horas ⏳</div>
+          <div style="font-size:13.5px; color:#8b968f; margin-top:8px;">El lead ya se enfrió</div>
+        </div>
+        <div style="background:#10311e; border:1px solid #1e6b3c; border-radius:16px; padding:22px 24px;">
+          <div style="font-size:13.5px; color:#7fd6a0; margin-bottom:8px;">Vesvir responde en</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:38px; color:#34e07a;">30 segundos ⚡</div>
+          <div style="font-size:13.5px; color:#7fd6a0; margin-top:8px;">El lead es tuyo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES INTRO -->
+  <section style="max-width:1180px; margin:96px auto 0; padding:0 28px; text-align:center;">
+    <div style="font-size:14px; font-weight:600; color:#1aa84e; letter-spacing:.04em; text-transform:uppercase; margin-bottom:14px;">Lo que hace Vesvir</div>
+    <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(30px,4vw,50px); line-height:1.05; letter-spacing:-.025em; margin:0 auto 16px; max-width:760px;">
+      No es un chatbot. Es un vendedor digital que crece con tu negocio.
+    </h2>
+    <p style="font-size:18px; color:#5b6760; max-width:600px; margin:0 auto; line-height:1.5;">Cinco herramientas que trabajan juntas para que ningún cliente se quede sin respuesta.</p>
+  </section>
+
+  <!-- FEATURE 1: CRM conversacional -->
+  <section style="max-width:1180px; margin:64px auto 0; padding:0 28px;">
+    <div style="display:grid; grid-template-columns:1fr 1.05fr; gap:54px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:13px; color:#1aa84e; background:#eafaef; padding:6px 12px; border-radius:8px; margin-bottom:18px;">01 · CRM conversacional</div>
+        <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:34px; line-height:1.1; letter-spacing:-.02em; margin:0 0 16px;">Tu pipeline de leads, directo desde el chat.</h3>
+        <p style="font-size:17px; line-height:1.55; color:#475149; margin:0 0 22px;">Cada conversación de WhatsApp se vuelve un lead organizado en tu pipeline. Sin formularios, sin capturar a mano. Vesvir clasifica solo: quién está caliente, quién necesita seguimiento, quién ya cerró.</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:11px; font-size:15.5px; color:#2b332d;">
+          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1aa84e; font-weight:700;">✓</span> Etapas que se actualizan solas con cada mensaje</li>
+          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1aa84e; font-weight:700;">✓</span> Todo el historial del cliente en un solo lugar</li>
+          <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:#1aa84e; font-weight:700;">✓</span> Sabes a quién hablarle hoy, sin adivinar</li>
+        </ul>
+      </div>
+      <div style="background:#f6f8f6; border:1px solid #e8ebe8; border-radius:22px; padding:22px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <span style="font-weight:700; font-size:15px;">Pipeline · Esta semana</span>
+          <span style="font-size:12.5px; color:#5b6760; background:#fff; border:1px solid #e3e7e3; padding:4px 10px; border-radius:20px;">42 leads activos</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
+          <sc-for list="{{ pipeline }}" as="col" hint-placeholder-count="4">
+            <div style="background:#fff; border:1px solid #e8ebe8; border-radius:13px; padding:11px 10px; min-height:150px;">
+              <div style="display:flex; align-items:center; gap:6px; font-size:12px; font-weight:700; color:#3a443d; margin-bottom:10px;">
+                <span style="width:8px; height:8px; border-radius:50%; background:{{ col.dot }}; display:inline-block;"></span>{{ col.name }}
+              </div>
+              <div style="display:flex; flex-direction:column; gap:7px;">
+                <sc-for list="{{ col.cards }}" as="c" hint-placeholder-count="2">
+                  <div style="background:#f7faf8; border:1px solid #e9eeea; border-radius:9px; padding:8px 9px;">
+                    <div style="font-size:12.5px; font-weight:600; color:#16201a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ c.name }}</div>
+                    <div style="font-size:11px; color:#7c867f; margin-top:2px;">{{ c.tag }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 2: Bot que aprende - autonomy levels -->
+  <section style="max-width:1180px; margin:96px auto 0; padding:0 28px;">
+    <div style="text-align:center; margin-bottom:40px;">
+      <div style="display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:13px; color:#1aa84e; background:#eafaef; padding:6px 12px; border-radius:8px; margin-bottom:16px;">02 · Bot que aprende</div>
+      <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(28px,3.4vw,42px); line-height:1.08; letter-spacing:-.02em; margin:0 auto 14px; max-width:680px;">Tú decides cuánto suelta el volante.</h3>
+      <p style="font-size:17.5px; color:#5b6760; max-width:620px; margin:0 auto; line-height:1.5;">Vesvir aprende de tus mejores cierres y avanza por 4 niveles de autonomía. Empieza observando; con el tiempo, vende solo.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+      <sc-for list="{{ levels }}" as="lv" hint-placeholder-count="4">
+        <div style="background:{{ lv.bg }}; border:1px solid {{ lv.border }}; border-radius:18px; padding:24px 22px; position:relative;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:30px; color:{{ lv.num }}; line-height:1;">{{ lv.n }}</div>
+          <div style="font-weight:700; font-size:18px; margin:12px 0 8px; color:#0b140f;">{{ lv.title }}</div>
+          <div style="font-size:14.5px; line-height:1.5; color:#48524b;">{{ lv.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FEATURE 3 & 4 grid: Llamadas IA + Secuencias -->
+  <section style="max-width:1180px; margin:96px auto 0; padding:0 28px;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <!-- Llamadas IA -->
+      <div style="background:#0b140f; color:#fff; border-radius:24px; padding:34px; overflow:hidden;">
+        <div style="display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:13px; color:#62e08c; background:#16241b; padding:6px 12px; border-radius:8px; margin-bottom:18px;">03 · Llamadas con IA</div>
+        <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; line-height:1.1; letter-spacing:-.02em; margin:0 0 12px;">Agenda y confirma citas por voz, sola.</h3>
+        <p style="font-size:16px; line-height:1.55; color:#b7c2bb; margin:0 0 24px;">Cuando un cliente prefiere que le llamen, Vesvir marca, habla en español mexicano, agenda y confirma. Tú solo recibes la cita lista.</p>
+        <div style="background:#141f18; border:1px solid #273229; border-radius:16px; padding:18px 20px;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+            <div style="width:44px; height:44px; border-radius:50%; background:#1e6b3c; display:flex; align-items:center; justify-content:center; font-size:20px;">📞</div>
+            <div>
+              <div style="font-weight:600; font-size:15px;">Llamando a Sr. González…</div>
+              <div style="font-size:13px; color:#7fd6a0;">Confirmación de cita · 00:42</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-end; gap:3px; height:34px;">
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:40%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:75%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:55%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:90%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:35%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:65%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:48%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:80%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:30%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:60%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:45%;"></span>
+            <span style="flex:1; background:#34e07a; border-radius:2px; height:72%;"></span>
+          </div>
+          <div style="margin-top:14px; background:#10311e; border:1px solid #1e6b3c; border-radius:11px; padding:10px 12px; font-size:13.5px; color:#aef0c5; font-weight:600;">✅ Cita confirmada · Martes 11:00 AM</div>
+        </div>
+      </div>
+      <!-- Secuencias seguimiento (chat) -->
+      <div style="background:#f6f8f6; border:1px solid #e8ebe8; border-radius:24px; padding:34px; display:flex; flex-direction:column;">
+        <div style="display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:13px; color:#1aa84e; background:#eafaef; padding:6px 12px; border-radius:8px; margin-bottom:18px; align-self:flex-start;">04 · Secuencias de seguimiento</div>
+        <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:28px; line-height:1.1; letter-spacing:-.02em; margin:0 0 12px;">Nunca olvida un seguimiento.</h3>
+        <p style="font-size:16px; line-height:1.55; color:#475149; margin:0 0 22px;">Cotizaciones, recordatorios y reactivación de clientes fríos. Flujos automáticos que recuperan ventas que ya dabas por perdidas.</p>
+        <div style="height:330px; margin-top:auto;">
+          <dc-import name="ChatThread" messages="{{ seguimientoChat }}" contact="Maderería Don Beto" accent="#d6f7c8" hint-size="100%,330px" style="width:100%;height:100%;"></dc-import>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE 5: Multi-canal -->
+  <section style="max-width:1180px; margin:24px auto 0; padding:0 28px;">
+    <div style="background:linear-gradient(100deg,#eafaef,#f6f8f6); border:1px solid #d9efe1; border-radius:24px; padding:34px 38px; display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:13px; color:#1aa84e; background:#fff; padding:6px 12px; border-radius:8px; margin-bottom:16px;">05 · Multi-canal</div>
+        <h3 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:30px; line-height:1.1; letter-spacing:-.02em; margin:0 0 10px;">WhatsApp, llamadas y SMS desde un solo lugar.</h3>
+        <p style="font-size:16.5px; line-height:1.5; color:#475149; margin:0; max-width:560px;">Tu equipo no salta entre apps ni pierde el hilo. Toda la conversación con cada cliente, en un solo tablero.</p>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <div style="background:#fff; border:1px solid #d9efe1; border-radius:16px; width:96px; height:104px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px;"><span style="font-size:30px;">💬</span><span style="font-size:13px; font-weight:600;">WhatsApp</span></div>
+        <div style="background:#fff; border:1px solid #d9efe1; border-radius:16px; width:96px; height:104px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px;"><span style="font-size:30px;">📞</span><span style="font-size:13px; font-weight:600;">Llamadas</span></div>
+        <div style="background:#fff; border:1px solid #d9efe1; border-radius:16px; width:96px; height:104px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:9px;"><span style="font-size:30px;">✉️</span><span style="font-size:13px; font-weight:600;">SMS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES showcase: animated chats -->
+  <section style="max-width:1180px; margin:100px auto 0; padding:0 28px;">
+    <div style="text-align:center; margin-bottom:42px;">
+      <div style="font-size:14px; font-weight:600; color:#1aa84e; letter-spacing:.04em; text-transform:uppercase; margin-bottom:14px;">Conversaciones reales</div>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,44px); line-height:1.06; letter-spacing:-.02em; margin:0 auto 14px; max-width:680px;">Así vende Vesvir en tu industria.</h2>
+      <p style="font-size:17.5px; color:#5b6760; max-width:580px; margin:0 auto; line-height:1.5;">Mismo cliente que se iba a ir. Misma venta que ahora cierras tú.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+      <div style="height:480px;"><dc-import name="ChatThread" messages="{{ autoChat }}" contact="Autos del Valle" accent="#d6f7c8" hint-size="100%,480px" style="width:100%;height:100%;"></dc-import></div>
+      <div style="height:480px;"><dc-import name="ChatThread" messages="{{ clinicaChat }}" contact="Clínica Dental Sonrisa" accent="#d6f7c8" hint-size="100%,480px" style="width:100%;height:100%;"></dc-import></div>
+      <div style="height:480px;"><dc-import name="ChatThread" messages="{{ inmoChat }}" contact="Inmuebles Lomas" accent="#d6f7c8" hint-size="100%,480px" style="width:100%;height:100%;"></dc-import></div>
+    </div>
+  </section>
+
+  <!-- ROI CALCULATOR -->
+  <section style="max-width:1180px; margin:100px auto 0; padding:0 28px;">
+    <div style="background:#0b140f; border-radius:28px; padding:48px; color:#fff; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+      <div>
+        <div style="font-size:14px; font-weight:600; color:#62e08c; letter-spacing:.04em; text-transform:uppercase; margin-bottom:14px;">Calcula tu ROI</div>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(28px,3.4vw,42px); line-height:1.08; letter-spacing:-.02em; margin:0 0 16px;">¿Cuánto dinero estás dejando en visto?</h2>
+        <p style="font-size:17px; line-height:1.55; color:#b7c2bb; margin:0 0 26px;">Elige tu giro y ajusta tus leads al mes. Te decimos cuánto podrías recuperar respondiendo a tiempo.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:9px; margin-bottom:26px;">
+          <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="6">
+            <button onClick="{{ ind.onClick }}" style="background:{{ ind.bg }}; color:{{ ind.fg }}; border:1px solid {{ ind.bd }}; font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:14px; padding:9px 15px; border-radius:30px; cursor:pointer;">{{ ind.name }}</button>
+          </sc-for>
+        </div>
+        <div>
+          <div style="display:flex; justify-content:space-between; font-size:14px; color:#b7c2bb; margin-bottom:10px;">
+            <span>Leads de WhatsApp al mes</span>
+            <strong style="color:#fff; font-size:16px;">{{ roi.leads }}</strong>
+          </div>
+          <input type="range" min="40" max="800" step="10" value="{{ roi.leads }}" onInput="{{ onLeads }}" style="width:100%; accent-color:#34e07a; cursor:pointer;">
+        </div>
+      </div>
+      <div style="background:#101b15; border:1px solid #233029; border-radius:22px; padding:32px;">
+        <div style="font-size:14px; color:#8b968f; margin-bottom:6px;">Para una {{ roi.name }} con {{ roi.leads }} leads/mes</div>
+        <div style="border-top:1px solid #233029; margin:18px 0; padding-top:18px; display:flex; flex-direction:column; gap:18px;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:15px; color:#b7c2bb;">Se enfrían hoy por respuesta lenta</span>
+            <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#ff7a6b;">{{ roi.lost }}</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:15px; color:#b7c2bb;">Recuperados con Vesvir</span>
+            <span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:26px; color:#34e07a;">{{ roi.recovered }}</span>
+          </div>
+        </div>
+        <div style="background:#10311e; border:1px solid #1e6b3c; border-radius:16px; padding:20px 22px; margin-top:8px;">
+          <div style="font-size:14px; color:#7fd6a0; margin-bottom:6px;">Ingreso extra estimado / mes</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:40px; letter-spacing:-.02em; color:#fff; line-height:1;">{{ roi.extra }}</div>
+          <div style="font-size:12.5px; color:#6f9a80; margin-top:8px;">Estimado con ticket promedio de {{ roi.ticket }} por venta.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS REALES -->
+  <section style="max-width:1180px; margin:100px auto 0; padding:0 28px;">
+    <div style="text-align:center; margin-bottom:42px;">
+      <div style="font-size:14px; font-weight:600; color:#1aa84e; letter-spacing:.04em; text-transform:uppercase; margin-bottom:14px;">Casos reales</div>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,44px); line-height:1.06; letter-spacing:-.02em; margin:0 auto; max-width:640px;">Negocios como el tuyo, vendiendo más.</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+      <sc-for list="{{ casos }}" as="cs" hint-placeholder-count="3">
+        <div style="background:#fff; border:1px solid #e8ebe8; border-radius:22px; padding:30px; display:flex; flex-direction:column;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:42px; letter-spacing:-.03em; color:#1aa84e; line-height:1;">{{ cs.metric }}</div>
+          <div style="font-size:14.5px; color:#5b6760; margin:8px 0 20px;">{{ cs.metricLabel }}</div>
+          <p style="font-size:15.5px; line-height:1.55; color:#2b332d; margin:0 0 22px; flex:1;">"{{ cs.quote }}"</p>
+          <div style="display:flex; align-items:center; gap:11px; border-top:1px solid #eef0ee; padding-top:18px;">
+            <div style="width:40px; height:40px; border-radius:50%; background:{{ cs.avBg }}; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px;">{{ cs.initials }}</div>
+            <div>
+              <div style="font-weight:700; font-size:14.5px;">{{ cs.name }}</div>
+              <div style="font-size:13px; color:#7c867f;">{{ cs.role }}</div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- DIFERENCIADORES -->
+  <section style="max-width:1180px; margin:100px auto 0; padding:0 28px;">
+    <div style="text-align:center; margin-bottom:42px;">
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(28px,3.6vw,44px); line-height:1.06; letter-spacing:-.02em; margin:0 auto; max-width:640px;">¿Por qué Vesvir y no otro?</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px;">
+      <sc-for list="{{ diffs }}" as="d" hint-placeholder-count="4">
+        <div style="background:#f6f8f6; border:1px solid #e8ebe8; border-radius:20px; padding:28px 30px; display:flex; gap:18px; align-items:flex-start;">
+          <div style="width:48px; height:48px; border-radius:13px; background:#0b140f; color:#25d366; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0;">{{ d.icon }}</div>
+          <div>
+            <div style="font-weight:700; font-size:19px; margin-bottom:6px;">{{ d.title }}</div>
+            <div style="font-size:15.5px; line-height:1.5; color:#48524b;">{{ d.desc }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FINAL CTA / PRICING -->
+  <section style="max-width:1180px; margin:100px auto 0; padding:0 28px;">
+    <div style="background:radial-gradient(700px 360px at 50% 0%, #163d27 0%, #0b140f 60%); border-radius:30px; padding:64px 40px; text-align:center; color:#fff;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(52,224,122,.14); color:#62e08c; border:1px solid rgba(52,224,122,.3); font-weight:600; font-size:14px; padding:8px 16px; border-radius:30px; margin-bottom:24px;">🔥 Pruébalo por $1 MXN · sin tarjeta atada</div>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:clamp(34px,5vw,60px); line-height:1.02; letter-spacing:-.03em; margin:0 auto 18px; max-width:760px;">Deja de perder clientes por contestar tarde.</h2>
+      <p style="font-size:19px; line-height:1.5; color:#b7c2bb; margin:0 auto 34px; max-width:560px;">Conecta tu WhatsApp y deja que Vesvir empiece a vender por ti. Listo en un día, sin equipo técnico.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:20px;">
+        <a style="background:#25d366; color:#063018; font-weight:700; font-size:17px; padding:16px 30px; border-radius:13px; text-decoration:none; cursor:pointer;">Empieza gratis →</a>
+        <a style="background:rgba(255,255,255,.08); color:#fff; font-weight:600; font-size:17px; padding:16px 30px; border-radius:13px; border:1px solid rgba(255,255,255,.2); text-decoration:none; cursor:pointer;">Agenda una demo</a>
+      </div>
+      <div style="font-size:13.5px; color:#7c867f;">Precios en MXN · Soporte en español mexicano · Integración con SAT / CFDI</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="max-width:1180px; margin:64px auto 0; padding:40px 28px 56px; border-top:1px solid #eef0ee; display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; gap:9px; font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:21px; letter-spacing:-.02em;">
+      <span style="width:28px; height:28px; border-radius:8px; background:#0b140f; display:flex; align-items:center; justify-content:center; color:#25d366; font-size:16px;">◇</span>
+      Vesvir
+    </div>
+    <div style="display:flex; gap:24px; font-size:14px; color:#5b6760; font-weight:500;">
+      <span style="cursor:pointer;">Producto</span>
+      <span style="cursor:pointer;">Precio</span>
+      <span style="cursor:pointer;">Casos</span>
+      <span style="cursor:pointer;">Contacto</span>
+    </div>
+    <div style="font-size:13px; color:#9aa39d;">© 2026 Vesvir · Hecho en México 🇲🇽</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ind: 0, leads: 320 };
+
+  _industryData() {
+    return [
+      { name: 'Refaccionaria', leads: 320, ticket: 1400 },
+      { name: 'Agencia automotriz', leads: 160, ticket: 16000 },
+      { name: 'Clínica', leads: 240, ticket: 1800 },
+      { name: 'Inmobiliaria', leads: 90, ticket: 55000 },
+      { name: 'Ferretería', leads: 400, ticket: 850 },
+      { name: 'Maderería', leads: 150, ticket: 5200 }
+    ];
+  }
+
+  pick(i) {
+    const d = this._industryData()[i];
+    this.setState({ ind: i, leads: d.leads });
+  }
+
+  fmt(n) {
+    return '$' + Math.round(n).toLocaleString('es-MX');
+  }
+
+  renderVals() {
+    const data = this._industryData();
+    const ind = this.state.ind;
+    const leads = this.state.leads;
+    const d = data[ind];
+    const lost = Math.round(leads * 0.35);
+    const recovered = Math.round(lost * 0.62);
+    const extra = recovered * 0.32 * d.ticket;
+
+    const industries = data.map((it, i) => ({
+      name: it.name,
+      onClick: () => this.pick(i),
+      bg: i === ind ? '#34e07a' : '#16241b',
+      fg: i === ind ? '#063018' : '#cfe7d8',
+      bd: i === ind ? '#34e07a' : '#28362c'
+    }));
+
+    const roi = {
+      name: d.name.toLowerCase(),
+      leads,
+      lost,
+      recovered,
+      extra: this.fmt(extra),
+      ticket: this.fmt(d.ticket)
+    };
+
+    const T = (t) => t; // identity for readability
+
+    return {
+      industries,
+      roi,
+      onLeads: (e) => this.setState({ leads: Number(e.target.value) }),
+
+      heroChat: [
+        { from:'them', text:'Buenas, ¿tienen balatas para una Ranger 2018?', time:'10:31' },
+        { from:'us', text:'¡Claro que sí! 🙌 Manejo cerámicas y semimetálicas para tu Ranger. ¿Cuáles buscas?', time:'10:31' },
+        { from:'them', text:'Cerámicas, ¿cuánto el juego?', time:'10:31' },
+        { from:'us', text:'El juego delantero cerámico sale en $1,290. Te lo aparto y pasas hoy. ¿Te late?', time:'10:32' },
+        { from:'them', text:'Va, sí porfa 👍', time:'10:32' },
+        { from:'us', card:true, icon:'📅', text:'Cita agendada · Hoy 5:00 PM' },
+        { from:'us', card:true, icon:'✅', text:'Lead calificado · Vendedor notificado' }
+      ],
+
+      seguimientoChat: [
+        { from:'us', text:'Hola Don Beto 👋 Hace 3 días le cotizamos el triplay de pino. ¿Seguimos con el pedido?', time:'09:10' },
+        { from:'them', text:'Ah sí, déjame lo checo', time:'09:14' },
+        { from:'us', text:'Claro. Le aparto el material al precio de la cotización ($4,800) hasta mañana. ¿Le parece?', time:'09:14' },
+        { from:'them', text:'Va, apártalo porfa', time:'09:20' },
+        { from:'us', card:true, icon:'💰', text:'Venta recuperada · $4,800' }
+      ],
+
+      autoChat: [
+        { from:'them', text:'Vi el Versa seminuevo en Facebook, ¿sigue disponible?', time:'18:02' },
+        { from:'us', text:'¡Sí, disponible! 🚗 Versa 2021, 38 mil km. ¿Lo buscas de contado o a crédito?', time:'18:02' },
+        { from:'them', text:'A crédito, ¿de cuánto el enganche?', time:'18:03' },
+        { from:'us', text:'Desde $35,000 de enganche y mensualidades de $4,200. ¿Te agendo prueba de manejo este sábado?', time:'18:03' },
+        { from:'them', text:'Sí, el sábado a las 12', time:'18:04' },
+        { from:'us', card:true, icon:'🚗', text:'Prueba de manejo · Sáb 12:00 PM' }
+      ],
+
+      clinicaChat: [
+        { from:'them', text:'Hola, ¿cuánto cuesta una limpieza dental?', time:'13:21' },
+        { from:'us', text:'¡Hola! 😊 La limpieza está en $650 e incluye revisión. ¿Te busco espacio esta semana?', time:'13:21' },
+        { from:'them', text:'Sí, el jueves si se puede', time:'13:22' },
+        { from:'us', text:'Listo, jueves 4:00 PM con la Dra. Mendoza. Te mando recordatorio un día antes 🦷', time:'13:22' },
+        { from:'us', card:true, icon:'🦷', text:'Cita confirmada · Jue 4:00 PM' }
+      ],
+
+      inmoChat: [
+        { from:'them', text:'Me interesó la casa en Las Lomas, ¿se puede ver?', time:'20:45' },
+        { from:'us', text:'¡Con gusto! 🏡 3 recámaras, $2.8M. ¿Prefieres visita entre semana o en fin?', time:'20:45' },
+        { from:'them', text:'En fin de semana mejor', time:'20:46' },
+        { from:'us', text:'Te agendo sábado 11:00 AM con un asesor. ¿Me confirmas tu nombre?', time:'20:46' },
+        { from:'them', text:'Carlos Ramírez', time:'20:47' },
+        { from:'us', card:true, icon:'🏡', text:'Visita agendada · Sáb 11:00 AM' }
+      ],
+
+      pipeline: [
+        { name:'Nuevo', dot:'#9aa39d', cards:[ {name:'Luis M.', tag:'Balatas Ranger'}, {name:'Paty R.', tag:'Aceite 5W30'} ] },
+        { name:'Calificado', dot:'#f0a93c', cards:[ {name:'Don Beto', tag:'Triplay pino'}, {name:'Sofía L.', tag:'Frenos completos'} ] },
+        { name:'Cita', dot:'#3aa0ff', cards:[ {name:'Sr. González', tag:'Mar 11:00 AM'} ] },
+        { name:'Cerrado', dot:'#1aa84e', cards:[ {name:'Carlos R.', tag:'$4,800 ✓'}, {name:'Ana V.', tag:'$1,290 ✓'} ] }
+      ],
+
+      levels: [
+        { n:'01', title:'Observa', desc:'Aprende cómo responde tu mejor vendedor. No envía nada todavía.', bg:'#f6f8f6', border:'#e8ebe8', num:'#9aa39d' },
+        { n:'02', title:'Sugiere', desc:'Te propone la respuesta lista. Tú la mandas con un toque.', bg:'#f1f9f3', border:'#d9efe1', num:'#5fbd80' },
+        { n:'03', title:'Pide aprobación', desc:'Redacta y agenda solo; espera tu visto bueno antes de enviar.', bg:'#eafaef', border:'#c5edd2', num:'#34b766' },
+        { n:'04', title:'Responde solo', desc:'Vende, califica y agenda de forma autónoma. Tú supervisas.', bg:'#0b140f', border:'#0b140f', num:'#34e07a' }
+      ],
+
+      casos: [
+        { metric:'+41%', metricLabel:'más citas confirmadas en 2 meses', quote:'Antes contestábamos cuando podíamos. Ahora Vesvir responde al instante y agenda solo. Pasamos de perder clientes a llenar la agenda.', name:'Mariana Cervantes', role:'Refaccionaria El Tornillo', initials:'MC', avBg:'#1aa84e' },
+        { metric:'8 hrs', metricLabel:'al día que dejó de invertir contestando', quote:'Mi equipo ya no vive pegado al celular. Vesvir filtra y nos pasa solo los leads listos para cerrar. Vendemos más trabajando menos.', name:'Jorge Medina', role:'Autos del Valle', initials:'JM', avBg:'#0b7a3c' },
+        { metric:'3×', metricLabel:'más ventas recuperadas de cotizaciones frías', quote:'Lo que más me sorprendió fue la reactivación. Clientes que ya dábamos por perdidos volvieron a comprar solos con el seguimiento.', name:'Beatriz Solís', role:'Maderería Don Beto', initials:'BS', avBg:'#0e5e2f' }
+      ],
+
+      diffs: [
+        { icon:'🇲🇽', title:'Hecho para México', desc:'Precios en MXN, soporte en español mexicano e integración con SAT y CFDI. No es una herramienta traducida.' },
+        { icon:'📈', title:'Crece con tu negocio', desc:'No es un chatbot rígido. Aprende de tus cierres y se vuelve más autónomo conforme le tienes confianza.' },
+        { icon:'⚡', title:'Listo en 1 día', desc:'Conectas tu WhatsApp y empieza a vender. Sin equipo técnico, sin proyectos de meses.' },
+        { icon:'💸', title:'Pruébalo por $1', desc:'Sin contratos atados ni riesgo. Por un peso compruebas que sí recupera ventas antes de pagar el plan completo.' }
+      ]
+    };
+  }
+}
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "Vesvir Landing";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  var __m = null;
+  try { __m = (() => {
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  if (paperPage) {
+    return { kind: 'paper-doc', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    if (authoredPx(el, 'width')) break;
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: ≥2 visible non-fixed children, each with authored px width
+  // AND height, all within ±2px of each other. Off unless the page opts in
+  // via data-om-multi-frame on the stop element — guards against card grids
+  // and pricing tables that match the geometry but aren't separate canvases.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var cands = [];
+    for (var k = 0; k < el.children.length; k++) {
+      var ch = el.children[k];
+      var cs; try { cs = getComputedStyle(ch); } catch (e) { continue; }
+      if (cs.display === 'none' || cs.visibility === 'hidden' || cs.position === 'fixed') continue;
+      var rc = rectOf(ch);
+      if (rc.width < 2 || rc.height < 2) continue;
+      if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+      cands.push(rc);
+    }
+    if (cands.length >= 2) {
+      var w0 = cands[0].width, h0 = cands[0].height, ok = true;
+      for (var q = 1; q < cands.length; q++)
+        if (Math.abs(cands[q].width - w0) > 2 || Math.abs(cands[q].height - h0) > 2) ok = false;
+      if (ok) return { kind: 'multi-frame', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  return { kind: 'single-canvas', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: authoredPx(el, 'width'), height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + f.width + 'px ' + f.height +
+        'px;margin:0}html,body,[data-om-frame-wrap]{padding:0!important;' +
+        'margin:0!important;background:none!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>
